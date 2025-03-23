@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comic Web</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            text-align: center;
+            border: 2px solid red;
+            padding: 10px;
+            display: inline-block;
+        }
+        a {
+            color: red;
+        }
+        table {
+            margin: auto;
+            border: 1px solid white;
+        }
+        .comic-links {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            max-width: 500px;
+            margin: auto;
+        }
+        .comic-links img {
+            width: 100px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bienvenido a Comic Web 🎭🌟</h1>
+    <p>Esta es una página oscura y vibrante diseñada para los amantes del cómic. Con un fondo negro, texto blanco y enlaces en rojo, te sumerge en un ambiente digno de una historieta épica.</p>
+    
+    <h2>📌 ¿Qué puedes encontrar aquí?</h2>
+    <ul style="list-style-type: none;"></ul>
+        <li>✅ <strong>Enlaces a cómics</strong> para descubrir historias emocionantes.</li>
+        <li>🖼️ <strong>Galería de imágenes</strong> con ilustraciones geniales.</li>
+        <li>🎬 <strong>Videos</strong> para explorar más del universo del cómic.</li>
+        <li>📩 <strong>Formulario de contacto</strong> para que nos dejes tu opinión.</li>
+        <li>📜 <strong>Tabla de personajes</strong> con héroes y sus poderes.</li>
+        <li>🔗 <strong>Links a sitios icónicos</strong> como Marvel, DC y Webtoons.</li>
+    </ul>
+    
+    <h2>Editoriales de Cómics</h2>
+    <ul style="list-style-type: none;">
+        <li><a href="MARVEL.html" target="_blank">Marvel</a></li>
+        <li><a href="DC.html" target="_blank">DC Comics</a></li>
+        <li><a href="Image Comics.html" target="_blank">Image Comics</a></li>
+        <li><a href="DarkHorseComics.html" target="_blank">Dark Horse Comics</a></li>
+        <li><a href="IDWPublishing.html" target="_blank">IDW Publishing</a></li>
+        <li><a href="ValiantComics.html" target="_blank">Valiant Comics</a></li>
+        <li><a href="Archie Comics.html" target="_blank">Archie Comics</a></li>
+        <li><a href="Boom! Studios.html" target="_blank">Boom! Studios</a></li>
+        <li><a href="Dynamite Entertainment.html" target="_blank">Dynamite Entertainment</a></li>
+    </ul>
+    
+    <h2>Galería de Imágenes</h2>
+    <img src="https://sm.ign.com/t/ign_es/screenshot/default/blob_n6vk.1280.jpg" alt="Imagen de cómic 1" width="500">
+    <img src="https://media.revistagq.com/photos/5e79ddce5bcabb0008f4dbab/4:3/w_1600,h_1200,c_limit/Civil%20War%20.jpg" alt="Imagen de cómic 2" width="350">
+    
+    <h2>Videos</h2>
+    <video width="500" height="500" controls>
+        <source src='C:\Users\casil\Downloads\Marvel Opening Theme.mp4' type="video/mp4">
+    </video>
+    
+    <h2>¿Cual heroe eres?</h2>
+    <form id="heroForm">
+        <label for="nombre">Nombre del Héroe:</label>
+        <input type="text" id="nombre" name="nombre" required><br>
+        <label for="poder">Superpoder:</label>
+        <input type="text" id="poder" name="poder" required><br>
+        <button type="button" onclick="agregarHeroe()">Agregar</button>
+    </form>
+
+    <script>
+        function agregarHeroe() {
+            const nombre = document.getElementById('nombre').value;
+            const poder = document.getElementById('poder').value;
+
+            if (nombre && poder) {
+                const tabla = document.querySelector('table');
+                const nuevaFila = tabla.insertRow();
+                const celdaNombre = nuevaFila.insertCell(0);
+                const celdaPoder = nuevaFila.insertCell(1);
+
+                celdaNombre.textContent = nombre;
+                celdaPoder.textContent = poder;
+
+                document.getElementById('heroForm').reset();
+            } else {
+                alert('Por favor, completa todos los campos.');
+            }
+        }
+    </script>
+    <footer style="margin-top: 20px; text-align: center; color: white;">
+        <p>&copy; 2023 Camilo Díaz. Todos los derechos reservados.</p>
+    </footer>
+   
+    <h2>Tabla de heroes </h2>
+    <table border="1">
+        <tr>
+            <th>Nombre de Héroe</th>
+            <th>Superpoder</th>
+        </tr>
+        <tr>
+            <td>Héroe 1</td>
+            <td>Vuelo</td>
+        </tr>
+        <tr>
+            <td>Héroe 2</td>
+            <td>Fuerza</td>
+        </tr>
+    </table>
+    
+    <h2>Enlaces de paginas oficiales </h2>
+    <div class="comic-links">
+        <a href="https://www.dc.com/comics"><img src="https://static.dc.com/2024-08/dc-logo-313x313.svg" alt="DC Comics"></a>
+        <a href="https://www.imagecomics.com"><img src="https://th.bing.com/th/id/OIP.dOjY5c8jcPg1gf85mSzzPAAAAA?rs=1&pid=ImgDetMain" alt="Image Comics"></a>
+        <a href="https://www.darkhorse.com"><img src="https://www.darkhorse.com/assets/dh-logo-2021-861fd5c9b6aeab3ea926775bec792f9d.svg" alt="Dark Horse Comics"></a>
+        <a href="https://www.webtoons.com"><img src="https://th.bing.com/th/id/R.f4e2dcaa7aede9757d7182f4bc54e25a?rik=rWfb8vvnvjHFyw&riu=http%3a%2f%2fwww.geekchicelite.com%2fwp-content%2fuploads%2f2018%2f09%2fWebtoon-Logo.png&ehk=ZC1dpSGMPwj8bJnJvz1rPYNdqBC3b6DkhNtQsRusn8k%3d&risl=&pid=ImgRaw&r=0" alt="Webtoons"></a>
+        <a href="https://www.marvel.com/"><img src="https://logos-world.net/wp-content/uploads/2020/11/Marvel-Logo-2000-2012.png" alt="DC Comics"></a>
+        <a href="https://www.amazon.com/kindle-dbs/comics-store/home?_encoding=UTF8&merchant=&ref=nav_ya_signin&#nav-top"><img src="https://th.bing.com/th/id/R.de6785ee60ba7879c39a279ddc0b034f?rik=MqxEjTzIsFjWAA&pid=ImgRaw&r=0" alt="Amazon Comics Store"></a>
+     
+    </div>
+</body>
+</html>
